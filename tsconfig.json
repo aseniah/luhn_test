@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": "./lib",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "useUnknownInCatchVariables": false
+  },
+  "include": ["src"]
+}
