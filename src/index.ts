@@ -9,7 +9,18 @@ interface TestResult {
 }
 
 // Test
-const testValues = ['250107Z05100017', '250107Z05100026', '250107Z05100035', '250107Z05100044', '250107Z05100053'];
+const testValues = [
+  '250107Z05100017',
+  '250107Z05100026',
+  '250107Z05100035',
+  '250107Z05100044',
+  '250107Z05100053',
+  '250109Z0510001W',
+  '250109Z0510002U',
+  '250109Z0510003S',
+  '250109Z0510004Q',
+  '250109Z0510005O',
+];
 const testResults: Array<TestResult> = [];
 testValues.forEach((testValue) => {
   const isValid = validateCheckCharacter(testValue, 'alpha-numeric');
