@@ -31,14 +31,26 @@ testValues.forEach((testValue) => {
   testResults.push(testResult);
 });
 
-// Output console formatted
-console.log('testValue'.padEnd(16), 'isValid'.padEnd(8), 'baseValue'.padEnd(15), 'luhnChar'.padEnd(9), 'validValue');
+// Calculate dynamic column widths
+const maxTestValueLength = Math.max('testValue'.length, ...testResults.map((r) => r.testValue.length));
+const maxIsValidLength = Math.max('isValid'.length, ...testResults.map((r) => r.isValid.toString().length));
+const maxBaseValueLength = Math.max('baseValue'.length, ...testResults.map((r) => r.baseValue.length));
+const maxLuhnCharLength = Math.max('luhnChar'.length, ...testResults.map((r) => r.luhnChar.length));
+
+// Output console formatted with dynamic spacing
+console.log(
+  'testValue'.padEnd(maxTestValueLength + 2),
+  'isValid'.padEnd(maxIsValidLength + 2),
+  'baseValue'.padEnd(maxBaseValueLength + 2),
+  'luhnChar'.padEnd(maxLuhnCharLength + 2),
+  'validValue',
+);
 testResults.forEach((testResult) => {
   console.log(
-    testResult.testValue.padEnd(16),
-    testResult.isValid.toString().padEnd(8),
-    testResult.baseValue.padEnd(15),
-    testResult.luhnChar.padEnd(9),
+    testResult.testValue.padEnd(maxTestValueLength + 2),
+    testResult.isValid.toString().padEnd(maxIsValidLength + 2),
+    testResult.baseValue.padEnd(maxBaseValueLength + 2),
+    testResult.luhnChar.padEnd(maxLuhnCharLength + 2),
     testResult.validValue,
   );
 });
