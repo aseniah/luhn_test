@@ -38,7 +38,7 @@ const maxBaseValueLength = Math.max('baseValue'.length, ...testResults.map((r) =
 const maxLuhnCharLength = Math.max('luhnChar'.length, ...testResults.map((r) => r.luhnChar.length));
 
 // Output console formatted with dynamic spacing
-console.log(
+console.info(
   'testValue'.padEnd(maxTestValueLength + 2),
   'isValid'.padEnd(maxIsValidLength + 2),
   'baseValue'.padEnd(maxBaseValueLength + 2),
@@ -46,7 +46,7 @@ console.log(
   'validValue',
 );
 testResults.forEach((testResult) => {
-  console.log(
+  console.info(
     testResult.testValue.padEnd(maxTestValueLength + 2),
     testResult.isValid.toString().padEnd(maxIsValidLength + 2),
     testResult.baseValue.padEnd(maxBaseValueLength + 2),

@@ -21,8 +21,8 @@ const getSum = (input: string, factor: 1 | 2, chars: string): number => {
     const factored = charLocation * factor;
 
     // Sum the digits of factored
-    const summmed = Math.floor(factored / num) + (factored % num);
-    sum += summmed;
+    const summed = Math.floor(factored / num) + (factored % num);
+    sum += summed;
 
     // Alternate factor for next round
     factor = factor === 2 ? 1 : 2;
@@ -34,7 +34,7 @@ const validateInput = (input: string, chars: string) => {
   if (!input.split('').every((c) => chars.includes(c))) {
     // Error
     const message = `Error unexpected characters in ${input}`;
-    console.log(message);
+    console.error(message);
     throw new Error(message);
   }
 };
