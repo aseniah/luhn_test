@@ -9,4 +9,5 @@ module.exports = {
     ...tsJestTransformCfg,
   },
   testPathIgnorePatterns: ["/node_modules/", "/lib/"],
+  silent: true,
 };
